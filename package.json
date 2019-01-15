@@ -21,6 +21,11 @@
     "url": "https://github.com/miage-lille/miage-auth/issues"
   },
   "homepage": "https://github.com/miage-lille/miage-auth#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.4.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
   "dependencies": {}
 }

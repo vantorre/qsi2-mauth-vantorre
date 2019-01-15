@@ -22,10 +22,18 @@
   },
   "homepage": "https://github.com/miage-lille/miage-auth#readme",
   "devDependencies": {
+    "env-cmd": "^8.0.2",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.4.0",
     "eslint-plugin-import": "^2.14.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "pg": "^7.8.0",
+    "pg-hstore": "^2.3.2",
+    "pino": "^5.10.6",
+    "pino-pretty": "^2.5.0",
+    "sequelize": "^4.42.0"
+  }
 }

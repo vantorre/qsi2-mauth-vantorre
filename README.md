@@ -1,3 +1,9 @@
+# Lancement postgres
+sudo docker run --name qsi2 -p 5432:5432 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=qsi2 -d postgres:9.4.18
+
+
+
+
 # MIAGE Authentication
 
 The objective of this workshop are :

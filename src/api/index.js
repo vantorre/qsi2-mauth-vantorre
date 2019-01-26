@@ -13,7 +13,7 @@ initAuth();
 api.use(express.json({ limit: '1mb' }));
 api.use(hpp());
 api.use(helmet());
-api.use(enforce.HTTPS());
+api.use(enforce.HTTPS({ trustProtoHeader: true }));
 // create an express router that will be mount at the root of the api
 const apiRoutes = express.Router();
 apiRoutes

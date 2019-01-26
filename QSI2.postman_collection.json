@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "6399679c-5977-43c9-a268-a7f5e39dcee0",
+		"name": "QSI2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "helloWorld",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscribe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"fab4@fab.fab\",\n\t\"password\": \"fab2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjFiZmQzNGFlLTdmODItNDk3OC04OGZjLTg2MzE2ZjBmOTg4NyJ9.gmlwvQXSXknb6Fg9fCFeYni_MNP4IQKP2lwZRb0fJys"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"titre\",\n\t\"description\": \"description\",\n\t\"metadatas\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/group",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMember",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjFiZmQzNGFlLTdmODItNDk3OC04OGZjLTg2MzE2ZjBmOTg4NyJ9.gmlwvQXSXknb6Fg9fCFeYni_MNP4IQKP2lwZRb0fJys"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupId\": \"d85c36f6-1a6d-48e9-be73-e080e470e80c\",\n\t\"userId\": \"f56471b0-7d03-42a2-b728-cbb5cfa6f52a\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/group/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"group",
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMember",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjFiZmQzNGFlLTdmODItNDk3OC04OGZjLTg2MzE2ZjBmOTg4NyJ9.gmlwvQXSXknb6Fg9fCFeYni_MNP4IQKP2lwZRb0fJys"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupId\": \"d85c36f6-1a6d-48e9-be73-e080e470e80c\",\n\t\"userId\": \"f56471b0-7d03-42a2-b728-cbb5cfa6f52a\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/group/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"group",
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImY1NjQ3MWIwLTdkMDMtNDJhMi1iNzI4LWNiYjVjZmE2ZjUyYSJ9.EREuZAu1A4eCZ62qr4t0sbLkeXkQRwmGQIr6Q1XV8wI"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"updatedfab@fab.fab\",\n\t\"password\": \"updatedfab\",\n\t\"firstName\": \"firstName\",\n\t\"lastName\": \"lastName\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"fab4@fab.fab\",\n\t\"password\": \"fab2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImY1NjQ3MWIwLTdkMDMtNDJhMi1iNzI4LWNiYjVjZmE2ZjUyYSJ9.EREuZAu1A4eCZ62qr4t0sbLkeXkQRwmGQIr6Q1XV8wI"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"fab@fab.fab\",\n\t\"password\": \"fab\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllGroups",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"fab@fab.fab\",\n\t\"password\": \"fab\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/group",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjFiZmQzNGFlLTdmODItNDk3OC04OGZjLTg2MzE2ZjBmOTg4NyJ9.gmlwvQXSXknb6Fg9fCFeYni_MNP4IQKP2lwZRb0fJys"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

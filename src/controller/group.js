@@ -7,7 +7,7 @@ const createGroup = (userId, {title, description, metadatas}) =>
         title,
         description,
         metadatas: metadatas || '',
-        owner_id : userId
+        owner_id: userId
     }).then(group =>
         omit(
             group.get({
@@ -17,7 +17,27 @@ const createGroup = (userId, {title, description, metadatas}) =>
         )
     );
 
+const isOwner = (userId, groupId) =>
+    Group.findOne({
+        where: {
+            id: groupId
+        }
+    }).then(group => group.owner_id === userId);
+
+const addMember = (userId, groupId) =>
+    Group.findOne({
+        where: {
+            id: groupId
+        }
+    }).then(group => {
+            console.log('group', group);
+            return group.addUsers(userId);
+        }
+    );
+
 
 module.exports = {
-    createGroup
+    createGroup,
+    addMember,
+    isOwner
 };

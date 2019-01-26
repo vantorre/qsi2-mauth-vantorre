@@ -7,14 +7,13 @@ const { apiGroup, publicApiGroup } = require('./group');
 const { isAuthenticated, initAuth } = require('../controller/auth');
 // create an express Application for our api
 const api = express();
-const apiRedirect = express();
 initAuth();
 
 // apply a middelware to parse application/json body
 api.use(express.json({ limit: '1mb' }));
 api.use(hpp());
 api.use(helmet());
-apiRedirect.use(enforce.HTTPS());
+api.use(enforce.HTTPS());
 // create an express router that will be mount at the root of the api
 const apiRoutes = express.Router();
 apiRoutes
@@ -39,4 +38,4 @@ apiRoutes
 
 // root of our API will be http://localhost:5000/api/v1
 api.use('/api/v1', apiRoutes);
-module.exports = {api, apiRedirect};
+module.exports = api;

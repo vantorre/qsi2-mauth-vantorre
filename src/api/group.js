@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jwt-simple');
-const {createGroup, addMember, isOwner} = require('../controller/group');
+const {createGroup, addMember, isOwner, deleteMember} = require('../controller/group');
 const logger = require('../logger');
 
 const apiGroup = express.Router();
@@ -43,6 +43,33 @@ apiGroup.put('/members', (req, res) => {
                     success: true,
                     profile: req.user,
                     message: 'member added'
+                })
+            )
+            .catch(err => {
+                logger.error(`💥 Failed to add member : ${err.stack}`);
+                return res.status(500).send({
+                    success: false,
+                    message: `${err.name} : ${err.message}`
+                });
+            })
+});
+
+apiGroup.delete('/members', (req, res) => {
+    !req.body.groupId || !req.body.userId
+        ? res.status(400).send({
+            success: false,
+            message: 'groupId and userId are required'
+        })
+        : !isOwner(req.user.id, req.body.groupId)
+        ? res.status(403).send({
+            success: false,
+            message: 'You are not the group owner'
+        })
+        : deleteMember(req.body.userId, req.body.groupId)
+            .then(res.status(200).send({
+                    success: true,
+                    profile: req.user,
+                    message: 'member deleted'
                 })
             )
             .catch(err => {

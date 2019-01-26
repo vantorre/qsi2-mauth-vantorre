@@ -35,9 +35,21 @@ const addMember = (userId, groupId) =>
         }
     );
 
+const deleteMember = (userId, groupId) =>
+    Group.findOne({
+        where: {
+            id: groupId
+        }
+    }).then(group => {
+            console.log('group', group);
+            return group.removeUsers(userId);
+        }
+    );
+
 
 module.exports = {
     createGroup,
     addMember,
-    isOwner
+    isOwner,
+    deleteMember
 };

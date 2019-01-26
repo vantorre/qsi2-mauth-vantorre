@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jwt-simple');
-const {createUser, loginUser, updateUser} = require('../controller/users');
+const {createUser, loginUser, updateUser, deleteUser} = require('../controller/users');
 const logger = require('../logger');
 
 const apiUsers = express.Router();
@@ -118,5 +118,9 @@ apiUsersProtected.put('/', (req, res) => {
                 });
             })
 });
+apiUsersProtected.delete('/', (req, res) =>
+    deleteUser(req.user).then(
+        res.status(200).send())
+);
 
 module.exports = {apiUsers, apiUsersProtected};

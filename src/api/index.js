@@ -1,6 +1,6 @@
 const express = require('express');
 const { apiUsers, apiUsersProtected } = require('./users');
-const { apiGroup } = require('./group');
+const { apiGroup, publicApiGroup } = require('./group');
 const { isAuthenticated, initAuth } = require('../controller/auth');
 // create an express Application for our api
 const api = express();
@@ -17,6 +17,7 @@ apiRoutes
     )
     // connect api users router
     .use('/users', apiUsers)
+    .use('/group', publicApiGroup)
     // api bellow this middelware require Authorization
     .use(isAuthenticated)
     .use('/users', apiUsersProtected)

@@ -46,10 +46,13 @@ const deleteMember = (userId, groupId) =>
         }
     );
 
+const getAllGroups = () => Group.findAll();
+
 
 module.exports = {
     createGroup,
     addMember,
     isOwner,
-    deleteMember
+    deleteMember,
+    getAllGroups
 };

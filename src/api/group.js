@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jwt-simple');
-const {createGroup, addMember, isOwner, deleteMember} = require('../controller/group');
+const {createGroup, addMember, isOwner, deleteMember, getAllGroups} = require('../controller/group');
 const logger = require('../logger');
 
 const apiGroup = express.Router();
@@ -82,4 +82,9 @@ apiGroup.delete('/members', (req, res) => {
 });
 
 
-module.exports = {apiGroup};
+const publicApiGroup = express.Router();
+publicApiGroup.get('/', (req, res) => getAllGroups().then( groups => res.status(200).send(groups)
+));
+
+
+module.exports = {apiGroup, publicApiGroup};

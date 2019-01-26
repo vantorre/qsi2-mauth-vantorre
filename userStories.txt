@@ -5,7 +5,7 @@ User stories :
     As an authenticate user, I want to create a group so that I could be a group admin. OK
     As a group admin, I want to add or delete user so that I could make my group grow.  OK
     As a group member, I want to get a list of all so that I could list most recent posts.  -> "of all" among what ???
-    As an anonymous user, I want to get a list of all groups so that I could ask to join one of them.
+    As an anonymous user, I want to get a list of all groups so that I could ask to join one of them.   OK
     As an API operator, I want secure my apis so that I could deliver a good service to end-users.
 
 

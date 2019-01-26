@@ -1,4 +1,6 @@
 const express = require('express');
+const hpp = require('hpp');
+const helmet = require('helmet')
 const { apiUsers, apiUsersProtected } = require('./users');
 const { apiGroup, publicApiGroup } = require('./group');
 const { isAuthenticated, initAuth } = require('../controller/auth');
@@ -8,6 +10,8 @@ initAuth();
 
 // apply a middelware to parse application/json body
 api.use(express.json({ limit: '1mb' }));
+api.use(hpp());
+api.use(helmet());
 // create an express router that will be mount at the root of the api
 const apiRoutes = express.Router();
 apiRoutes

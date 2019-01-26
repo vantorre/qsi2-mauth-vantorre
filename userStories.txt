@@ -20,4 +20,4 @@ Authenticated
 
 GET    /api/v1/users/  "get info of logged user"    OK
 PUT    /api/v1/users/  "modify info of logged user" OK
-DELETE /api/v1/users/  "delete the logged user"
+DELETE /api/v1/users/  "delete the logged user"     OK
